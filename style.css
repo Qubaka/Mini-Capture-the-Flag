@@ -1,0 +1,30 @@
+body{
+    font-family:'Trebuchet MS';
+    display: flex;
+    justify-content: center;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+}
+h1{
+    font-size: 50px;
+}
+div[data-secret]{
+    display: none;
+}
+div #f2{
+    position: fixed;
+    left: 200vw;
+    top: -200vh;
+}
+#f2{
+    position: fixed !important;
+    top: -200vh !important;
+}
+#div{
+    position: fixed;
+    top: -200vh;
+}
