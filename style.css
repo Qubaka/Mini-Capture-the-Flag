@@ -1,7 +1,12 @@
+:root{
+  --myBodyBackground: #f6f0f0;
+}
+
 body{
     font-family:'Trebuchet MS';
     display: flex;
     justify-content: center;
+    background: var(--myBodyBackground);
 }
 .main{
     display: flex;
