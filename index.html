@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capture The Flag</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  </head>
+  <body>
     <div class="main">
-        <div data-secret="">Look</div>
-        <h1>Watch out for secrets!</h1>
-        <!-- <form> -->
-            <input type="text" name="input1" id="input1">
-            <div data-secret="">for</div>
-            <label for="input"> - Flag 1</label><br>
-            <input type="text" name="input2" id="input2">
-            <label for="input"> - Flag 2</label><br>
-            <input type="text" name="input3" id="input3">
-            <label for="input"> - Flag 3</label><br>
-            <div data-secret="">images</div>
-            <button id="button">Submit</button>
-        <!-- </form> -->
+      <div data-secret="">Look</div>
+      <h1>Watch out for secrets!</h1>
+      <!-- <form> -->
+
+      <div data-secret="">for</div>
+      <fieldset>
+        <label for="input1">Flag 1
+        </label>
+        <input type="text" name="input1" id="input1">
+        <label for="input2">Flag 2
+        </label>
+        <input type="text" name="input2" id="input2">
+        <label for="input3">Flag 3
+        </label>
+        <input type="text" name="input3" id="input3">
+        <br>
+        <input type="button" id="submitButton" value="Submit"></button>
+      </fieldset>
+      <div data-secret="">images</div>
+      <!-- </form> -->
     </div>
     <div id="div">
-        <div data-secret="">inside</div>
-        <img src="flag2.png" alt="flag2" id="f2">
+      <div data-secret="">inside</div>
+      <img src="flag2.png" alt="flag2" id="f2">
     </div>
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

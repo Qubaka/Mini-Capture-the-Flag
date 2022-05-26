@@ -28,3 +28,22 @@ div #f2{
     position: fixed;
     top: -200vh;
 }
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 2em;
+  border: 1px solid black;
+  border-radius: .2em;
+  max-width: 75vw;
+  min-width: 50vw
+}
+
+fieldset label {
+  margin: 1ch 0 .6ch;
+}
+
+.correct {
+  border: 1px solid greenyellow;
+}
