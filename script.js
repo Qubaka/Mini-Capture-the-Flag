@@ -4,6 +4,12 @@ const FLAG_1 = "Look for images inside";
 const FLAG_2 = "F2";
 const FLAG_3 = "F3";
 
+const headings = [
+  "Watch out for secrets!",
+  "Look for images within",
+  "Always two there are no more no less"
+]
+
 let input1 = document.getElementById("input1");
 let input2 = document.getElementById("input2");
 let input3 = document.getElementById("input3");
@@ -14,7 +20,7 @@ let heading = document.querySelector("h1");
 const handleInputValidation = (target, flag) => {
   // Helpers
   const sideEffectOne = (correctAnswer) => {
-    heading.innerText = correctAnswer ? "Always two there are no more no less" : "Watch out for secrets!"
+    heading.innerText = correctAnswer ? headings[1] : headings[0]
   }
 
   // Main part
