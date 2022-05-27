@@ -1,5 +1,5 @@
 :root{
-  --myBodyBackground: #f6f0f0;
+  --myBodyBackground: #fefafa;
 }
 
 body{
@@ -13,6 +13,7 @@ body{
     flex-direction: column;
     height: fit-content;
     justify-content: center;
+    width: 30vw;
 }
 h1{
     font-size: 50px;
@@ -20,16 +21,17 @@ h1{
 div[data-secret]{
     display: none;
 }
-div #f2{
+div img{
+  display: none;
     position: fixed;
     left: 200vw;
     top: -200vh;
 }
-#f2{
+img{
     position: fixed !important;
     top: -200vh !important;
 }
-#div{
+div div{
     position: fixed;
     top: -200vh;
 }

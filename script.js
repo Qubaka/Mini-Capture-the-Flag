@@ -1,13 +1,14 @@
 "use strict"
 
 const FLAG_1 = "Look for images inside";
-const FLAG_2 = "F2";
-const FLAG_3 = "F3";
+const FLAG_2 = "Brighten";
+const FLAG_3 = "notacolor";
+let FLAG_POINTS = 0;
 
 const headings = [
   "Watch out for secrets!",
   "Look for images within",
-  "Always two there are no more no less"
+  "Watch your back..."
 ]
 
 let input1 = document.getElementById("input1");
@@ -20,25 +21,54 @@ let heading = document.querySelector("h1");
 const handleInputValidation = (target, flag) => {
   // Helpers
   const sideEffectOne = (correctAnswer) => {
-    heading.innerText = correctAnswer ? headings[1] : headings[0]
+    heading.innerText = correctAnswer ? headings[1] : headings[0];
+    document.querySelector('html > body > div > div > div > div > div').innerHTML+= '<!-- <img src="untitled.svg">-->';
+  }
+  const sideEffectTwo = (correctAnswer) => {
+    heading.innerText = correctAnswer ? headings[2] : headings[0]
+    document.documentElement.style.setProperty('--myBodyBackground', 'notacolor');
   }
 
   // Main part
-  if (target.value === flag) {
-    target.classList.add("correct");
-  }
-  else { target.classList.remove("correct") }
+  // if (target.value === flag) {
+  //   target.classList.add("correct");
+  // }
+  // else { target.classList.remove("correct") }
 
   // Side effects
   switch (target.name) {
     case "input1":
       sideEffectOne(target.value === flag)
+      FLAG_POINTS = 1;
+
+      if (target.value === flag) {
+        target.classList.add("correct");
+      }
+      else { target.classList.remove("correct") }
+
       break;
     case "input2":
+      if(FLAG_POINTS == 1){
+        sideEffectTwo(target.value === flag)
+        FLAG_POINTS = 2
 
+        if (target.value === flag) {
+          target.classList.add("correct");
+        }
+        else { target.classList.remove("correct") }
+
+      }
       break;
     case "input3":
+      if(FLAG_POINTS == 2){
+        alert('You did it!')
 
+        if (target.value === flag) {
+          target.classList.add("correct");
+        }
+        else { target.classList.remove("correct") }
+        
+      }
       break;
 
     default:
@@ -46,21 +76,6 @@ const handleInputValidation = (target, flag) => {
   }
 }
 
-input1.addEventListener("change", e => handleInputValidation(e.target, FLAG_1))
-input2.addEventListener("change", e => handleInputValidation(e.target, FLAG_2))
-input3.addEventListener("change", e => handleInputValidation(e.target, FLAG_3))
-
-// button.addEventListener("click", function () {
-//   if (input3.value == "f3" && input2.value == "f2" && input1.value == "Look for images inside") {
-//     alert("Yo! You did it champ!")
-//   }
-//   else if (input2.value == "f2" && input1.value == "Look for images inside") {
-//     alert("Great! That's the right answer!")
-//   }
-//   else if (input1.value == "Look for images inside") {
-//     alert("Good job! that was the first task!")
-//   }
-//   else {
-//     alert("You need to pass at least one flag!")
-//   }
-// }) 
+input1.addEventListener("focusout", e => handleInputValidation(e.target, FLAG_1))
+input2.addEventListener("focusout", e => handleInputValidation(e.target, FLAG_2))
+input3.addEventListener("focusout", e => handleInputValidation(e.target, FLAG_3))
