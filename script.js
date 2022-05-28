@@ -22,7 +22,7 @@ const handleInputValidation = (target, flag) => {
   // Helpers
   const sideEffectOne = (correctAnswer) => {
     heading.innerText = correctAnswer ? headings[1] : headings[0];
-    document.querySelector('html > body > div > div > div > div > div').innerHTML+= '<!-- <img src="untitled.svg">-->';
+    document.querySelector('html > body > div > div > div > div > div').innerHTML += '<!-- <img src="untitled.svg">-->';
   }
   const sideEffectTwo = (correctAnswer) => {
     heading.innerText = correctAnswer ? headings[2] : headings[0]
@@ -39,20 +39,21 @@ const handleInputValidation = (target, flag) => {
   switch (target.name) {
     case "input1":
       sideEffectOne(target.value === flag)
-      FLAG_POINTS = 1;
 
       if (target.value === flag) {
+        FLAG_POINTS = 1;
         target.classList.add("correct");
       }
       else { target.classList.remove("correct") }
 
       break;
     case "input2":
-      if(FLAG_POINTS == 1){
+      if (FLAG_POINTS == 1) {
         sideEffectTwo(target.value === flag)
-        FLAG_POINTS = 2
+
 
         if (target.value === flag) {
+          FLAG_POINTS = 2
           target.classList.add("correct");
         }
         else { target.classList.remove("correct") }
@@ -60,18 +61,13 @@ const handleInputValidation = (target, flag) => {
       }
       break;
     case "input3":
-      if(FLAG_POINTS == 2){
-        alert('You did it!')
+      if (target.value === flag) {
+        debugger
+        if (FLAG_POINTS == 2) alert('You did it!')
 
-        if (target.value === flag) {
-          target.classList.add("correct");
-        }
-        else { target.classList.remove("correct") }
-        
+        target.classList.add("correct");
       }
-      break;
-
-    default:
+      else { target.classList.remove("correct") }
       break;
   }
 }
